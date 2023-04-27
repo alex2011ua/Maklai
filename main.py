@@ -24,4 +24,4 @@ async def paraphrase(tree: str, limit: int = 20):
     p = Paraphrase(tree)
     p.find_rephrase()
     p.make_random_permutations()
-    return p.get_phrases(limit=limit)
+    return {"paraphrases": p.get_phrases(limit=limit)}

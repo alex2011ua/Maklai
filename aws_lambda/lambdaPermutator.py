@@ -41,7 +41,7 @@ def paraphrase(event, context):
     p = Paraphrase(tree)
     p.find_rephrase()
     p.make_random_permutations()
-    body = p.get_phrases(limit=limit)
+    body = {"paraphrases": p.get_phrases(limit=limit)}
 
     return {'statusCode': 200,
             'body': json.dumps(body)
